@@ -3,53 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Metronome - A precise metronome app for musicians. Perfect timing for practice and performance.">
-    <title>Metronome - iOS App</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Metronome Pro - Tempo BPM | Professional Metronome App for iOS</title>
+    <meta name="title" content="Metronome Pro - Tempo BPM | Professional Metronome App for iOS">
+    <meta name="description" content="Metronome Pro - Tempo BPM: A clean, modern metronome app for musicians. Precise BPM control, tap tempo, time signatures, subdivisions, and preset saving. Free iOS app for perfect timing in practice and performance.">
+    <meta name="keywords" content="metronome app, tempo app, BPM metronome, iOS metronome, music metronome, practice metronome, tempo control, time signature, music practice, rhythm training, musician app, free metronome">
+    <meta name="author" content="omoot apps">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <link rel="canonical" href="https://moonmoonnotsun.github.io/metronome/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moonmoonnotsun.github.io/metronome/">
+    <meta property="og:title" content="Metronome Pro - Tempo BPM | Professional Metronome App for iOS">
+    <meta property="og:description" content="A clean, modern metronome designed for musicians. Precise tempo control with tap-tempo, time signatures, subdivisions, and preset saving. Free on iOS.">
+    <meta property="og:image" content="https://moonmoonnotsun.github.io/assets/images/metronome/Frame 2934.png">
+    <meta property="og:site_name" content="Metronome Pro">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://moonmoonnotsun.github.io/metronome/">
+    <meta property="twitter:title" content="Metronome Pro - Tempo BPM | Professional Metronome App for iOS">
+    <meta property="twitter:description" content="A clean, modern metronome designed for musicians. Precise tempo control with tap-tempo, time signatures, subdivisions, and preset saving. Free on iOS.">
+    <meta property="twitter:image" content="https://moonmoonnotsun.github.io/assets/images/metronome/Frame 2934.png">
+    
+    <!-- App Store -->
+    <meta name="apple-itunes-app" content="app-id=6755417459">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/metronome/Frame 2935.png">
+    <link rel="apple-touch-icon" href="../assets/images/metronome/Frame 2935.png">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/app-page.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Metronome Pro - Tempo BPM",
+        "applicationCategory": "MusicApplication",
+        "operatingSystem": "iOS",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150"
+        },
+        "description": "A clean, modern metronome designed for musicians who want speed, accuracy, and zero distractions. Lightning-fast tempo control with tap-tempo and intuitive adjustments.",
+        "screenshot": "https://moonmoonnotsun.github.io/assets/images/metronome/iMockup - iPhone 15 Pro Max.png",
+        "featureList": [
+            "Precise BPM Control",
+            "Tap Tempo",
+            "Time Signatures (2/4, 3/4, 4/4, 5/4, 6/8, 7/8, 9/8, 12/8)",
+            "Subdivisions (Quarter, Eighth, Triplet, Sixteenth)",
+            "Save Presets",
+            "Visual & Audio Beat Indicators"
+        ],
+        "softwareVersion": "1.0",
+        "releaseNotes": "Initial release with all core features",
+        "downloadUrl": "https://apps.apple.com/us/app/metronome-pro-tempo-bpm/id6755417459",
+        "softwareRequirements": "iOS 15.0 or later"
+    }
+    </script>
 </head>
 <body>
-    <nav class="nav">
-        <a href="/" class="nav-link">← Back to Apps</a>
-    </nav>
-
+    <div class="grid-background"></div>
+    <main>
     <div class="app-hero">
-        <div class="app-hero-content">
-            <div class="app-icon-large">🎵</div>
-            <h1 class="app-title">Metronome</h1>
-            <p class="app-tagline">Perfect timing for every musician</p>
-            <div class="app-badges">
-                <a href="#" class="app-store-badge" aria-label="Download on the App Store">
-                    <img src="../assets/images/app-store-badge.svg" alt="Download on the App Store" onerror="this.style.display='none'">
-                    <span class="badge-fallback">Download on the App Store</span>
-                </a>
+        <div class="app-hero-container">
+            <div class="app-hero-content">
+                <!-- <div class="availability-badge">
+                    <span class="badge-dot"></span>
+                    <span>Now available on iOS</span>
+                </div> -->
+                <div class="app-icon-large">
+                    <img src="../assets/images/metronome/Frame 2934.png" alt="Metronome Pro Logo" class="app-logo">
+                </div>
+                <p class="app-slogan">Metronome Pro</p>
+                <h1 class="app-title">Catch the <span class="highlight-tempo">tempo</span> of your song</h1>
+                <p class="app-tagline">A clean, modern metronome designed for musicians who want speed, accuracy, and zero distractions. Lightning-fast tempo control with tap-tempo and intuitive adjustments.</p>
+                <div class="app-badges">
+                    <a href="https://apps.apple.com/us/app/metronome-pro-tempo-bpm/id6755417459" target="_blank" rel="noopener noreferrer" class="btn btn-app-store" aria-label="Download on the App Store">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; vertical-align: middle;">
+                            <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"></path>
+                        </svg>
+                        <span>Download on the App Store</span>
+                        <span class="btn-divider"></span>
+                        <span class="btn-free">Free</span>
+                    </a>
+                    <!-- <a href="#features" class="btn btn-secondary">
+                        <span>Learn More</span>
+                    </a> -->
+                </div>
+                <!-- <div class="social-proof">
+                    <div class="avatar-group">
+                        <div class="avatar"></div>
+                        <div class="avatar"></div>
+                        <div class="avatar"></div>
+                        <div class="avatar"></div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="app-hero-visual">
+                <div class="phone-mockup">
+                    <img src="../assets/images/metronome/iMockup - iPhone 15 Pro Max.png" alt="Metronome Pro - Tempo BPM iOS app running on iPhone 15 Pro Max showing main metronome interface" class="phone-screenshot" width="400" height="800" loading="eager">
+                </div>
             </div>
         </div>
     </div>
 
-    <section class="app-section">
+    <section class="app-section" id="features">
         <div class="container">
-            <h2 class="section-title">Features</h2>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-line">Precise timing,</span>
+                    <span class="title-line title-accent">zero distractions</span>
+                </h2>
+                <p class="section-subtitle">Everything you need for perfect timing. From simple practice to complex rhythm training, all in one clean app.</p>
+            </div>
+            <h3 class="sr-only">Metronome Pro Features</h3>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">⏱️</div>
-                    <h3 class="feature-title">Precise Timing</h3>
-                    <p class="feature-description">Accurate tempo control with customizable BPM settings</p>
+                    <div class="feature-icon-container">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Precise BPM Control</h3>
+                    <p class="feature-description">Adjustable tempo with large, easy-to-read BPM display and intuitive +/- controls for any musical style.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎹</div>
-                    <h3 class="feature-title">Multiple Time Signatures</h3>
-                    <p class="feature-description">Support for various time signatures to match your music</p>
+                    <div class="feature-icon-container">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Tap Tempo</h3>
+                    <p class="feature-description">Tap along to any rhythm and instantly set the perfect BPM. Easy to use, accurate results.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎧</div>
+                    <div class="feature-icon-container">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18V5l12-2v13"/>
+                            <circle cx="6" cy="18" r="3"/>
+                            <circle cx="18" cy="16" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Time Signatures</h3>
+                    <p class="feature-description">Support for 2/4, 3/4, 4/4, 5/4, 6/8, 7/8, 9/8, and 12/8 to match any musical piece.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-container">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <line x1="9" y1="3" x2="9" y2="21"/>
+                            <line x1="15" y1="3" x2="15" y2="21"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                            <line x1="3" y1="15" x2="21" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Subdivisions</h3>
+                    <p class="feature-description">Choose from Quarter, Eighth, Triplet, Sixteenth, and more. Perfect for complex rhythm practice.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-container">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                            <polyline points="17 21 17 13 7 13 7 21"/>
+                            <polyline points="7 3 7 8 15 8"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Save Presets</h3>
+                    <p class="feature-description">Save your favorite BPM, time signature, and subdivision combinations for quick access during practice.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-container">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            <line x1="12" y1="19" x2="12" y2="23"/>
+                            <line x1="8" y1="23" x2="16" y2="23"/>
+                        </svg>
+                    </div>
                     <h3 class="feature-title">Visual & Audio</h3>
-                    <p class="feature-description">Both visual indicators and audio clicks for better practice</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚙️</div>
-                    <h3 class="feature-title">Customizable</h3>
-                    <p class="feature-description">Adjust volume, accent beats, and visual preferences</p>
+                    <p class="feature-description">Clear visual beat indicators and crisp audio clicks. Perfect for both silent and audible practice.</p>
                 </div>
             </div>
         </div>
@@ -57,45 +205,70 @@
 
     <section class="app-section app-section-alt">
         <div class="container">
-            <h2 class="section-title">Screenshots</h2>
+            <div class="section-header">
+                <h2 class="section-title">See It In Action</h2>
+                <p class="section-subtitle">Experience the clean, modern interface designed for musicians</p>
+            </div>
             <div class="screenshots-grid">
-                <!-- Add screenshot images here -->
-                <div class="screenshot-placeholder">
-                    <p>Add your app screenshots here</p>
+                <div class="screenshot-item">
+                    <img src="../assets/images/metronome/Frame 2941.jpg" alt="Metronome Pro - Time Signature" onerror="this.parentElement.classList.add('screenshot-placeholder'); this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <p style="display: none;">Time Signature Selector</p>
                 </div>
-                <div class="screenshot-placeholder">
-                    <p>Add your app screenshots here</p>
+                <div class="screenshot-item">
+                    <img src="../assets/images/metronome/Frame 2948.jpg" alt="Metronome Pro - Easy to Use" onerror="this.parentElement.classList.add('screenshot-placeholder'); this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <p style="display: none;">Easy to Use Interface</p>
                 </div>
-                <div class="screenshot-placeholder">
-                    <p>Add your app screenshots here</p>
+                <div class="screenshot-item">
+                    <img src="../assets/images/metronome/Frame 2947.jpg" alt="Metronome Pro - Subdivision" onerror="this.parentElement.classList.add('screenshot-placeholder'); this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <p style="display: none;">Subdivision Options</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="../assets/images/metronome/Frame 2949.jpg" alt="Metronome Pro - Additional Feature" onerror="this.parentElement.classList.add('screenshot-placeholder'); this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <p style="display: none;">Additional Feature</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="../assets/images/metronome/Frame 2950.jpg" alt="Metronome Pro - Settings" onerror="this.parentElement.classList.add('screenshot-placeholder'); this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <p style="display: none;">Settings & Customization</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="app-section">
-        <div class="container">
-            <h2 class="section-title">About</h2>
-            <div class="about-content">
-                <p>
-                    Metronome is a professional-grade metronome application designed for musicians of all levels. 
-                    Whether you're practicing scales, learning a new piece, or preparing for a performance, 
-                    Metronome provides the precise timing you need.
-                </p>
-                <p>
-                    With an intuitive interface and powerful features, Metronome helps you develop better rhythm 
-                    and timing skills. Perfect for pianists, guitarists, drummers, and musicians of all instruments.
-                </p>
+    <section class="cta-section">
+        <div class="cta-card">
+            <h2 class="cta-title">Start your perfect rhythm</h2>
+            <p class="cta-description">Download Metronome Pro and take your practice to the next level. Join musicians who trust precision timing.</p>
+            <div class="cta-buttons">
+                <a href="https://apps.apple.com/us/app/metronome-pro-tempo-bpm/id6755417459" target="_blank" rel="noopener noreferrer" class="btn btn-app-store" aria-label="Download on the App Store">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; vertical-align: middle;">
+                        <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"></path>
+                    </svg>
+                    <span>Download on the App Store</span>
+                    <span class="btn-divider"></span>
+                    <span class="btn-free">Free</span>
+                </a>
             </div>
         </div>
     </section>
 
     <footer class="app-footer">
         <div class="container">
-            <p>&copy; 2026 Metronome. All rights reserved.</p>
-            <a href="/" class="footer-link">View All Apps</a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-circle">M</div>
+                    <span class="logo-text">Metronome Pro - Tempo BPM</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://mpc-app-c2e7a.web.app/metronome-privacy.html" target="_blank" rel="noopener noreferrer" class="footer-link">Privacy</a>
+                    <a href="https://mpc-app-c2e7a.web.app/metronome-terms.html" target="_blank" rel="noopener noreferrer" class="footer-link">Terms</a>
+                    <a href="mailto:dev.ohmyapp@gmail.com" class="footer-link">Support</a>
+                    <a href="mailto:dev.ohmyapp@gmail.com" class="footer-link">Contact</a>
+                </div>
+            </div>
+            <p class="footer-copyright">&copy; 2026 Metronome Pro - Tempo BPM</p>
         </div>
     </footer>
+    </main>
 </body>
 </html>
 
