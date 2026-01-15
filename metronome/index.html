@@ -40,6 +40,195 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/app-page.css">
     
+    <!-- Mobile Font Size and Spacing Adjustments -->
+    <style>
+        /* Mobile Font Size Adjustments */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem !important;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem !important;
+            }
+            
+            .feature-title {
+                font-size: 1.125rem !important;
+            }
+            
+            .feature-description {
+                font-size: 0.9375rem !important;
+                line-height: 1.6 !important;
+            }
+            
+            .cta-title {
+                font-size: 1.75rem !important;
+            }
+            
+            .cta-description {
+                font-size: 1.0625rem !important;
+                line-height: 1.6 !important;
+            }
+            
+            .footer-logo .logo-text {
+                font-size: 1rem !important;
+            }
+            
+            .footer-link {
+                font-size: 0.9375rem !important;
+            }
+            
+            .footer-copyright {
+                font-size: 0.875rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.75rem !important;
+            }
+            
+            .section-subtitle {
+                font-size: 0.9375rem !important;
+            }
+            
+            .feature-title {
+                font-size: 1rem !important;
+            }
+            
+            .feature-description {
+                font-size: 0.875rem !important;
+                line-height: 1.5 !important;
+            }
+            
+            .cta-title {
+                font-size: 1.5rem !important;
+            }
+            
+            .cta-description {
+                font-size: 1rem !important;
+                line-height: 1.5 !important;
+            }
+        }
+        
+        /* Reduce Bottom Spacing on Mobile */
+        @media (max-width: 768px) {
+            .app-section {
+                padding-bottom: 50px !important;
+            }
+            
+            .app-hero {
+                margin-bottom: 30px !important;
+            }
+            
+            .section-header {
+                margin-bottom: 40px !important;
+            }
+            
+            .cta-section {
+                padding-bottom: 50px !important;
+            }
+            
+            .cta-card {
+                margin-bottom: 0 !important;
+            }
+            
+            .app-footer {
+                margin-top: 40px !important;
+                padding-top: 40px !important;
+                padding-bottom: 30px !important;
+            }
+            
+            .footer-content {
+                margin-bottom: 20px !important;
+            }
+            
+            .footer-copyright {
+                padding-top: 20px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .app-section {
+                padding-bottom: 40px !important;
+            }
+            
+            .app-hero {
+                margin-bottom: 20px !important;
+            }
+            
+            .section-header {
+                margin-bottom: 30px !important;
+            }
+            
+            .cta-section {
+                padding-bottom: 40px !important;
+            }
+            
+            .app-footer {
+                margin-top: 30px !important;
+                padding-top: 30px !important;
+                padding-bottom: 24px !important;
+            }
+            
+            .footer-content {
+                margin-bottom: 16px !important;
+            }
+            
+            .footer-copyright {
+                padding-top: 16px !important;
+            }
+        }
+        
+        /* Screenshots Grid Responsive Layout */
+        .screenshots-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
+            justify-content: center !important;
+            max-width: 1200px !important;
+        }
+        
+        @media (max-width: 1024px) {
+            .screenshots-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .screenshots-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .screenshots-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        /* Download Button Height - Match Soundboard */
+        .btn-app-store {
+            padding: 22px 36px !important;
+            min-height: 64px !important;
+            font-size: 1.125rem !important;
+        }
+        
+        @media (max-width: 768px) {
+            .btn-app-store {
+                padding: 20px 40px !important;
+                min-height: 60px !important;
+                font-size: 1.0625rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .btn-app-store {
+                padding: 18px 28px !important;
+                min-height: 56px !important;
+                font-size: 1rem !important;
+            }
+        }
+    </style>
+    
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -88,7 +277,7 @@
                 <div class="app-icon-large">
                     <img src="../assets/images/metronome/Frame 2934.png" alt="Metronome Pro Logo" class="app-logo">
                 </div>
-                <p class="app-slogan">Metronome Pro</p>
+                <p class="app-slogan">Metronome App</p>
                 <h1 class="app-title">Catch the <span class="highlight-tempo">tempo</span> of your song</h1>
                 <p class="app-tagline">A clean, modern metronome designed for musicians who want speed, accuracy, and zero distractions. Lightning-fast tempo control with tap-tempo and intuitive adjustments.</p>
                 <div class="app-badges">
@@ -211,8 +400,8 @@
             </div>
             <div class="screenshots-grid">
                 <div class="screenshot-item">
-                    <img src="../assets/images/metronome/Frame 2941.jpg" alt="Metronome Pro iOS app showing time signature selection interface" loading="lazy" width="280" height="600" decoding="async" onerror="this.parentElement.classList.add('screenshot-placeholder'); this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <p style="display: none;">Time Signature Selector</p>
+                    <img src="../assets/images/metronome/Frame 2950.jpg" alt="Metronome Pro iOS app settings and customization options" loading="lazy" width="280" height="600" decoding="async" onerror="this.parentElement.classList.add('screenshot-placeholder'); this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <p style="display: none;">Settings & Customization</p>
                 </div>
                 <div class="screenshot-item">
                     <img src="../assets/images/metronome/Frame 2948.jpg" alt="Metronome Pro iOS app main interface with BPM control and tap tempo" loading="lazy" width="280" height="600" decoding="async" onerror="this.parentElement.classList.add('screenshot-placeholder'); this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -225,10 +414,6 @@
                 <div class="screenshot-item">
                     <img src="../assets/images/metronome/Frame 2949.jpg" alt="Metronome Pro iOS app preset management screen" loading="lazy" width="280" height="600" decoding="async" onerror="this.parentElement.classList.add('screenshot-placeholder'); this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <p style="display: none;">Additional Feature</p>
-                </div>
-                <div class="screenshot-item">
-                    <img src="../assets/images/metronome/Frame 2950.jpg" alt="Metronome Pro iOS app settings and customization options" loading="lazy" width="280" height="600" decoding="async" onerror="this.parentElement.classList.add('screenshot-placeholder'); this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <p style="display: none;">Settings & Customization</p>
                 </div>
             </div>
         </div>
