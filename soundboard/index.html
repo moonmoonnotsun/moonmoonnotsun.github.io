@@ -12,6 +12,10 @@
     <meta name="author" content="omoot apps">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sound Board">
     <link rel="canonical" href="https://moonmoonnotsun.github.io/soundboard/">
     
     <!-- Open Graph / Facebook -->
@@ -20,17 +24,31 @@
     <meta property="og:title" content="Sound Board - Audio Buttons | Create Your Own Sound Board for iOS">
     <meta property="og:description" content="Create your own sound board in seconds. Add sounds instantly, organize samples, and trigger audio with a single tap. Perfect for streamers, podcasters, DJs, and content creators.">
     <meta property="og:image" content="https://moonmoonnotsun.github.io/assets/images/soundboard/Frame 3009.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Sound Board - Audio Buttons iOS App">
+    <meta property="og:image:secure_url" content="https://moonmoonnotsun.github.io/assets/images/soundboard/Frame 3009.png">
     <meta property="og:site_name" content="Sound Board - Audio Buttons">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:updated_time" content="2026-01-15T00:00:00+00:00">
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://moonmoonnotsun.github.io/soundboard/">
-    <meta property="twitter:title" content="Sound Board - Audio Buttons | Create Your Own Sound Board for iOS">
-    <meta property="twitter:description" content="Create your own sound board in seconds. Add sounds instantly, organize samples, and trigger audio with a single tap. Perfect for streamers, podcasters, DJs, and content creators.">
-    <meta property="twitter:image" content="https://moonmoonnotsun.github.io/assets/images/soundboard/Frame 3009.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://moonmoonnotsun.github.io/soundboard/">
+    <meta name="twitter:title" content="Sound Board - Audio Buttons | Create Your Own Sound Board for iOS">
+    <meta name="twitter:description" content="Create your own sound board in seconds. Add sounds instantly, organize samples, and trigger audio with a single tap. Perfect for streamers, podcasters, DJs, and content creators.">
+    <meta name="twitter:image" content="https://moonmoonnotsun.github.io/assets/images/soundboard/Frame 3009.png">
+    <meta name="twitter:image:alt" content="Sound Board - Audio Buttons iOS App">
     
     <!-- App Store -->
     <meta name="apple-itunes-app" content="app-id=6755937474">
+    <meta name="theme-color" content="#4f5afc">
+    
+    <!-- Performance Hints -->
+    <link rel="preconnect" href="https://apps.apple.com" crossorigin>
+    <link rel="dns-prefetch" href="https://apps.apple.com">
+    <link rel="preload" href="../assets/css/main.css" as="style">
+    <link rel="preload" href="../assets/css/app-page.css" as="style">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/soundboard/favicon-32x32.png">
@@ -111,8 +129,8 @@
         }
         
         .phone-screenshot {
-            width: 100% !important;
-            height: auto !important;
+            width: auto !important;
+            height: 75vh !important;
         }
         
         @media (min-width: 1400px) {
@@ -613,6 +631,13 @@
         "name": "Sound Board - Audio Buttons",
         "applicationCategory": "MusicApplication",
         "operatingSystem": "iOS",
+        "inLanguage": "en-US",
+        "datePublished": "2024-01-01",
+        "dateModified": "2026-01-15",
+        "author": {
+            "@type": "Organization",
+            "name": "omoot apps"
+        },
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -639,6 +664,28 @@
         "softwareRequirements": "iOS 15.1 or later"
     }
     </script>
+    
+    <!-- BreadcrumbList Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://moonmoonnotsun.github.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Sound Board - Audio Buttons",
+                "item": "https://moonmoonnotsun.github.io/soundboard/"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="grid-background"></div>
@@ -648,7 +695,7 @@
             <div class="app-hero-content">
                 <div class="app-icon-large">
                     <a href="https://apps.apple.com/us/app/sound-board-audio-buttons/id6755937474" target="_blank" rel="noopener noreferrer" aria-label="Download Sound Board - Audio Buttons on the App Store" style="display: block; text-decoration: none;">
-                        <img src="../assets/images/soundboard/Frame 2977.png" alt="Sound Board - Audio Buttons Logo" class="app-logo">
+                        <img src="../assets/images/soundboard/Frame 2977.png" alt="Sound Board - Audio Buttons Logo" class="app-logo" width="120" height="120" loading="eager" decoding="async">
                     </a>
                 </div>
                 <p class="app-slogan">Sound Board App</p>
@@ -667,7 +714,7 @@
             </div>
             <div class="app-hero-visual">
                 <div class="phone-mockup">
-                    <img src="../assets/images/soundboard/frame1.png" alt="Sound Board - Audio Buttons iOS app running on iPhone showing main soundboard interface" class="phone-screenshot" width="400" height="800" loading="eager" decoding="async">
+                    <img src="../assets/images/soundboard/frame1.png" alt="Sound Board - Audio Buttons iOS app running on iPhone showing main soundboard interface" class="phone-screenshot" loading="eager" decoding="async">
                 </div>
             </div>
         </div>
