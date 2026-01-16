@@ -59,6 +59,24 @@
             this.config.projectToken = projectToken;
             this.config = { ...this.config, ...options };
 
+            // Ensure projectName is set
+            if (!this.config.projectName) {
+                console.error('⚠️ MixpanelTracker: projectName is required! All events must have a prefix: [metronome], [decibel], [beatmaker], [soundboard], or [main]');
+                // Try to infer from page path as fallback
+                const pageName = this.getPageName();
+                const mapping = {
+                    'home': 'main',
+                    'metronome': 'metronome',
+                    'decibel-meter': 'decibel',
+                    'beatmaker': 'beatmaker',
+                    'soundboard': 'soundboard'
+                };
+                this.config.projectName = mapping[pageName] || 'unknown';
+                if (this.config.debug) {
+                    console.warn('⚠️ Inferred projectName:', this.config.projectName, 'from page:', pageName);
+                }
+            }
+
             // Don't re-initialize - Mixpanel should already be initialized by the official snippet
             // Just set user properties and start tracking
 
