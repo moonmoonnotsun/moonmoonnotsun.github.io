@@ -66,7 +66,7 @@
             if (typeof mixpanel !== 'undefined') {
                 try {
                     mixpanel.init('2ab77ed29d0b04d62a75f63eaecc2a94', {
-                        debug: true,
+                        debug: false,
                         track_pageview: false,
                         persistence: 'localStorage'
                     });
@@ -103,7 +103,7 @@
             setTimeout(function() {
                 if (typeof MixpanelTracker !== 'undefined' && typeof mixpanel !== 'undefined') {
                     MixpanelTracker.init('2ab77ed29d0b04d62a75f63eaecc2a94', {
-                        debug: true
+                        debug: false
                     });
                     console.log('✅ MixpanelTracker initialized');
                 } else {
