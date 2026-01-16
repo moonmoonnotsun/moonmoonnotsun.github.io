@@ -61,6 +61,66 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/app-page.css">
     
+    <!-- Mixpanel Analytics -->
+    <script src="https://cdn.mixpanel.com/lib/mixpanel-2-latest.min.js" onerror="console.warn('Mixpanel SDK failed to load. This is normal when opening files locally with file:// protocol.')"></script>
+    <script>
+        // Wait for Mixpanel SDK to load, then initialize
+        function initMixpanel() {
+            if (typeof mixpanel !== 'undefined') {
+                try {
+                    mixpanel.init('2ab77ed29d0b04d62a75f63eaecc2a94', {
+                        debug: true,
+                        track_pageview: false,
+                        persistence: 'localStorage'
+                    });
+                    console.log('✅ Mixpanel SDK loaded and initialized');
+                    return true;
+                } catch (e) {
+                    console.error('Error initializing Mixpanel:', e);
+                    return false;
+                }
+            }
+            return false;
+        }
+        
+        // Try to initialize immediately, or wait for script to load
+        if (!initMixpanel()) {
+            var checkMixpanel = setInterval(function() {
+                if (initMixpanel()) {
+                    clearInterval(checkMixpanel);
+                }
+            }, 100);
+            // Stop checking after 5 seconds
+            setTimeout(function() {
+                clearInterval(checkMixpanel);
+                if (typeof mixpanel === 'undefined') {
+                    console.warn('⚠️ Mixpanel SDK did not load. This is normal when opening files locally. Use a local server for testing.');
+                }
+            }, 5000);
+        }
+    </script>
+    <script src="../assets/js/mixpanel-tracker.js"></script>
+    <script>
+        // Initialize Mixpanel Tracker
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                if (typeof MixpanelTracker !== 'undefined' && typeof mixpanel !== 'undefined') {
+                    MixpanelTracker.init('2ab77ed29d0b04d62a75f63eaecc2a94', {
+                        debug: true
+                    });
+                    console.log('✅ MixpanelTracker initialized');
+                } else {
+                    if (typeof mixpanel === 'undefined') {
+                        console.warn('⚠️ Mixpanel SDK not loaded. This is normal when opening files locally with file:// protocol.');
+                    }
+                    if (typeof MixpanelTracker === 'undefined') {
+                        console.error('❌ MixpanelTracker not defined. Check if ../assets/js/mixpanel-tracker.js is loaded correctly.');
+                    }
+                }
+            }, 200);
+        });
+    </script>
+    
     <!-- Soundboard Color Overrides - Cool Blue Theme -->
     <style>
         :root {
