@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     
     <!-- Mixpanel Analytics -->
-    <script src="https://cdn.mixpanel.com/lib/mixpanel-2-latest.min.js" onerror="console.warn('Mixpanel SDK failed to load. This is normal when opening files locally with file:// protocol.')"></script>
+    <script src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
     <script>
         // Wait for Mixpanel SDK to load, then initialize
         function initMixpanel() {
@@ -68,7 +68,6 @@
                         track_pageview: false,
                         persistence: 'localStorage'
                     });
-                    console.log('✅ Mixpanel SDK loaded and initialized');
                     return true;
                 } catch (e) {
                     console.error('Error initializing Mixpanel:', e);
@@ -78,19 +77,15 @@
             return false;
         }
         
-        // Try to initialize immediately, or wait for script to load
+        // Wait for script to load, then initialize
         if (!initMixpanel()) {
             var checkMixpanel = setInterval(function() {
                 if (initMixpanel()) {
                     clearInterval(checkMixpanel);
                 }
             }, 100);
-            // Stop checking after 5 seconds
             setTimeout(function() {
                 clearInterval(checkMixpanel);
-                if (typeof mixpanel === 'undefined') {
-                    console.warn('⚠️ Mixpanel SDK did not load. This is normal when opening files locally. Use a local server for testing.');
-                }
             }, 5000);
         }
     </script>
@@ -103,11 +98,7 @@
                     MixpanelTracker.init('2ab77ed29d0b04d62a75f63eaecc2a94', {
                         debug: false
                     });
-                    console.log('✅ MixpanelTracker initialized');
                 } else {
-                    if (typeof mixpanel === 'undefined') {
-                        console.warn('⚠️ Mixpanel SDK not loaded. This is normal when opening files locally with file:// protocol.');
-                    }
                     if (typeof MixpanelTracker === 'undefined') {
                         console.error('❌ MixpanelTracker not defined. Check if assets/js/mixpanel-tracker.js is loaded correctly.');
                     }
