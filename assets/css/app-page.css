@@ -820,9 +820,9 @@
         height: 100px;
         padding: 16px;
         border-radius: 24px;
-        /* Minimal shadows on small mobile for best performance */
-        filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.3));
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        /* NO shadows on small mobile - prevents lag during fadeInUp animation */
+        filter: none !important;
+        box-shadow: none !important;
     }
     
     .app-title {
