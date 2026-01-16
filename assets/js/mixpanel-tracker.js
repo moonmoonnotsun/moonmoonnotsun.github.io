@@ -18,18 +18,25 @@
         // Configuration
         config: {
             projectToken: null,
+            projectName: null, // e.g., 'metronome', 'decibel', 'beatmaker', 'soundboard', 'main'
             debug: false, // Set to true for development
-            throttleScroll: true,
-            throttleTime: true
+            throttleScroll: true
         },
 
         // State
         state: {
             pageStartTime: Date.now(),
-            scrollMilestones: new Set(),
-            timeMilestones: new Set(),
-            screenshotViewed: false,
-            featuresViewed: false
+            scrollMilestones: new Set()
+        },
+
+        /**
+         * Format event name with project prefix
+         * @param {string} eventName - The event name
+         * @returns {string} Formatted event name like [project] event_name
+         */
+        formatEventName: function(eventName) {
+            const project = this.config.projectName || 'unknown';
+            return `[${project}] ${eventName}`;
         },
 
         /**
@@ -67,12 +74,6 @@
             // Setup scroll tracking
             this.setupScrollTracking();
 
-            // Setup time tracking
-            this.setupTimeTracking();
-
-            // Setup intersection observers for sections
-            this.setupIntersectionObservers();
-
             if (this.config.debug) {
                 console.log('Mixpanel Tracker initialized');
             }
@@ -104,7 +105,7 @@
             const pageName = this.getPageName();
             const pagePath = window.location.pathname;
 
-            mixpanel.track('page_viewed', {
+            mixpanel.track(this.formatEventName('page_viewed'), {
                 page_name: pageName,
                 page_path: pagePath,
                 referrer: document.referrer || 'direct',
@@ -118,7 +119,7 @@
             });
 
             if (this.config.debug) {
-                console.log('Tracked: page_viewed', { page_name: pageName });
+                console.log('Tracked:', this.formatEventName('page_viewed'), { page_name: pageName });
             }
         },
 
@@ -131,7 +132,7 @@
             const timeOnPage = Math.floor((Date.now() - this.state.pageStartTime) / 1000);
             const scrollDepth = this.getScrollDepth();
 
-            mixpanel.track('download_button_clicked', {
+            mixpanel.track(this.formatEventName('download_button_clicked'), {
                 app_name: appName,
                 button_location: buttonLocation,
                 page_name: appName,
@@ -143,7 +144,7 @@
             });
 
             if (this.config.debug) {
-                console.log('Tracked: download_button_clicked', { app_name: appName, button_location: buttonLocation });
+                console.log('Tracked:', this.formatEventName('download_button_clicked'), { app_name: appName, button_location: buttonLocation });
             }
         },
 
@@ -153,14 +154,14 @@
         trackLogoClick: function() {
             const appName = this.getPageName();
 
-            mixpanel.track('logo_clicked', {
+            mixpanel.track(this.formatEventName('logo_clicked'), {
                 app_name: appName,
                 page_name: appName,
                 device_type: this.getDeviceType()
             });
 
             if (this.config.debug) {
-                console.log('Tracked: logo_clicked', { app_name: appName });
+                console.log('Tracked:', this.formatEventName('logo_clicked'), { app_name: appName });
             }
         },
 
@@ -168,13 +169,13 @@
          * Track "Learn More" click
          */
         trackLearnMoreClick: function(appName) {
-            mixpanel.track('learn_more_clicked', {
+            mixpanel.track(this.formatEventName('learn_more_clicked'), {
                 app_name: appName,
                 source_page: 'home'
             });
 
             if (this.config.debug) {
-                console.log('Tracked: learn_more_clicked', { app_name: appName });
+                console.log('Tracked:', this.formatEventName('learn_more_clicked'), { app_name: appName });
             }
         },
 
@@ -190,80 +191,14 @@
 
             const timeToScroll = Math.floor((Date.now() - this.state.pageStartTime) / 1000);
 
-            mixpanel.track('scroll_milestone', {
+            mixpanel.track(this.formatEventName('scroll_milestone'), {
                 page_name: this.getPageName(),
                 scroll_depth: depth,
                 time_to_scroll: timeToScroll
             });
 
             if (this.config.debug) {
-                console.log('Tracked: scroll_milestone', { scroll_depth: depth });
-            }
-        },
-
-        /**
-         * Track page engagement (time-based)
-         */
-        trackPageEngagement: function(timeOnPage) {
-            if (this.state.timeMilestones.has(timeOnPage)) {
-                return; // Already tracked
-            }
-
-            this.state.timeMilestones.add(timeOnPage);
-
-            mixpanel.track('page_engagement', {
-                page_name: this.getPageName(),
-                time_on_page: timeOnPage,
-                scroll_depth: this.getScrollDepth()
-            });
-
-            if (this.config.debug) {
-                console.log('Tracked: page_engagement', { time_on_page: timeOnPage });
-            }
-        },
-
-        /**
-         * Track screenshot section view
-         */
-        trackScreenshotView: function() {
-            if (this.state.screenshotViewed) {
-                return; // Already tracked
-            }
-
-            this.state.screenshotViewed = true;
-
-            const screenshotCount = document.querySelectorAll('.screenshot-item img').length;
-
-            mixpanel.track('screenshot_viewed', {
-                page_name: this.getPageName(),
-                screenshot_count: screenshotCount,
-                device_type: this.getDeviceType()
-            });
-
-            if (this.config.debug) {
-                console.log('Tracked: screenshot_viewed');
-            }
-        },
-
-        /**
-         * Track features section view
-         */
-        trackFeaturesView: function() {
-            if (this.state.featuresViewed) {
-                return; // Already tracked
-            }
-
-            this.state.featuresViewed = true;
-
-            const featureCount = document.querySelectorAll('.feature-card').length;
-
-            mixpanel.track('features_section_viewed', {
-                page_name: this.getPageName(),
-                feature_count: featureCount
-            });
-
-            if (this.config.debug) {
-                console.log('Tracked: features_section_viewed');
+                console.log('Tracked:', this.formatEventName('scroll_milestone'), { scroll_depth: depth });
             }
         },
 
@@ -333,55 +268,6 @@
             });
         },
 
-        /**
-         * Setup time-based engagement tracking
-         */
-        setupTimeTracking: function() {
-            if (!this.config.throttleTime) {
-                return;
-            }
-
-            const milestones = [10, 30, 60, 120]; // seconds
-
-            milestones.forEach(milestone => {
-                setTimeout(() => {
-                    this.trackPageEngagement(milestone);
-                }, milestone * 1000);
-            });
-        },
-
-        /**
-         * Setup intersection observers for sections
-         */
-        setupIntersectionObservers: function() {
-            // Screenshot section
-            const screenshotSection = document.querySelector('.screenshots-grid');
-            if (screenshotSection) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !this.state.screenshotViewed) {
-                            this.trackScreenshotView();
-                        }
-                    });
-                }, { threshold: 0.5 });
-
-                observer.observe(screenshotSection);
-            }
-
-            // Features section
-            const featuresSection = document.querySelector('.features-grid');
-            if (featuresSection) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !this.state.featuresViewed) {
-                            this.trackFeaturesView();
-                        }
-                    });
-                }, { threshold: 0.5 });
-
-                observer.observe(featuresSection);
-            }
-        },
 
         // Helper methods
 
