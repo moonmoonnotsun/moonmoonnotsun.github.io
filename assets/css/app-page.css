@@ -131,8 +131,16 @@
 
 /* Disable hover effects on mobile/touch devices */
 @media (hover: none) and (pointer: coarse) {
-    .app-icon-large:hover .app-logo {
-        transform: none;
+    .app-logo {
+        /* Disable all animations on touch devices */
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+    
+    .app-icon-large:hover .app-logo,
+    .app-icon-large:active .app-logo {
+        transform: none !important;
         filter: drop-shadow(0 20px 60px rgba(139, 92, 246, 0.5)) 
                 drop-shadow(0 0 40px rgba(167, 139, 250, 0.3));
     }
@@ -158,9 +166,17 @@
         filter: drop-shadow(0 12px 30px rgba(139, 92, 246, 0.4));
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2),
                     inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        /* Disable all animations and transitions on mobile */
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        will-change: auto !important;
     }
     
-    .app-icon-large:hover .app-logo {
+    .app-icon-large:hover .app-logo,
+    .app-icon-large:active .app-logo {
+        /* No transform animations on mobile - static logo */
+        transform: none !important;
         /* Static enhanced shadow on hover - no filter animation */
         filter: drop-shadow(0 16px 40px rgba(139, 92, 246, 0.5));
         box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3),

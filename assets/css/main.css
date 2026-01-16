@@ -196,7 +196,7 @@ body {
 }
 
 .app-card {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(30, 41, 59, 0.6) 100%);
+    background: rgba(25, 30, 54, 0.14);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(139, 92, 246, 0.3);
