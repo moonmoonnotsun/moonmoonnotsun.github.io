@@ -151,6 +151,20 @@
             }
         }
         
+        /* Remove shadows on mobile to prevent lag during fadeInUp animation */
+        @media (max-width: 768px) {
+            .app-logo {
+                filter: none !important;
+                box-shadow: none !important;
+            }
+            
+            .app-icon-large:hover .app-logo,
+            .app-icon-large:active .app-logo {
+                filter: none !important;
+                box-shadow: none !important;
+            }
+        }
+        
         .app-icon-large a {
             display: block;
             cursor: pointer;
