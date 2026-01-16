@@ -67,9 +67,15 @@
         mixpanel.init('2ab77ed29d0b04d62a75f63eaecc2a94', {
             autocapture: false,
             record_sessions_percent: 0,
+            record_heatmap_data: false,
             api_host: 'https://api-eu.mixpanel.com',
             track_pageview: false
         });
+        
+        // Explicitly disable autocapture to ensure no [Auto] events
+        if (typeof mixpanel.set_config === 'function') {
+            mixpanel.set_config({ autocapture: false });
+        }
     </script>
     <script src="../assets/js/mixpanel-tracker.js"></script>
     <script>
