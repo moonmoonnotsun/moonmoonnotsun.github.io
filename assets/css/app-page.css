@@ -813,6 +813,7 @@
     
     .app-icon-large {
         font-size: 3.5rem;
+        margin-bottom: 0;
     }
     
     .app-logo {
@@ -830,7 +831,9 @@
     }
     
     .app-slogan {
-        font-size: 1.25rem;
+        margin-top: 0 !important;
+        margin-bottom: 26px !important;
+        font-size: 1.125rem !important;
     }
     
     .section-title {

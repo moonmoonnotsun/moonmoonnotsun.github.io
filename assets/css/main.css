@@ -225,7 +225,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--gradient-card);
+    background: rgba(25, 30, 54, 0.14);
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: 0;
@@ -240,7 +240,6 @@ body {
     border-color: rgba(139, 92, 246, 0.5);
     box-shadow: 0 12px 40px rgba(139, 92, 246, 0.35),
                 0 0 60px rgba(139, 92, 246, 0.15);
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(30, 41, 59, 0.7) 100%);
 }
 
 .app-icon-container {
