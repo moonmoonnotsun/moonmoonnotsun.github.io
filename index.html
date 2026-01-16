@@ -57,53 +57,60 @@
     <link rel="stylesheet" href="assets/css/main.css">
     
     <!-- Mixpanel Analytics -->
-    <script src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
-    <script>
-        // Wait for Mixpanel SDK to load, then initialize
-        function initMixpanel() {
-            if (typeof mixpanel !== 'undefined') {
-                try {
-                    mixpanel.init('2ab77ed29d0b04d62a75f63eaecc2a94', {
-                        debug: false,
-                        track_pageview: false,
-                        persistence: 'localStorage'
-                    });
-                    return true;
-                } catch (e) {
-                    console.error('Error initializing Mixpanel:', e);
-                    return false;
-                }
+    <script type="text/javascript">
+        (function(f,b){
+            if(!b.__SV){
+                var e,g,i,h;
+                window.mixpanel = b;
+                b._i = [];
+                b.init = function(token, config, name){
+                    function createStub(a,d){
+                        var parts = d.split(".");
+                        if(parts.length == 2){
+                            a = a[parts[0]];
+                            d = parts[1];
+                        }
+                        a[d] = function(){
+                            b._i.push([d].concat(Array.prototype.slice.call(arguments,0)));
+                        };
+                    }
+                    var mp = b;
+                    if(typeof name !== "undefined"){ mp = b[name] = []; }
+                    mp.people = mp.people || [];
+                    mp.toString = function(a){ var str = "mixpanel"; if(name&&name!=="mixpanel"){ str += "."+name; } return (a||"") ? str : str + " (stub)"; };
+                    mp.people.toString = function(){ return mp.toString(1) + ".people (stub)"; };
+                    var methods = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+                    for(var m = 0; m < methods.length; m++){
+                        createStub(mp, methods[m]);
+                    }
+                    b._i.push([token, config, name]);
+                };
+                b.__SV = 1.2;
+                e = f.createElement("script");
+                e.type = "text/javascript";
+                e.async = true;
+                e.src = "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+                g = f.getElementsByTagName("script")[0];
+                g.parentNode.insertBefore(e, g);
             }
-            return false;
-        }
-        
-        // Wait for script to load, then initialize
-        if (!initMixpanel()) {
-            var checkMixpanel = setInterval(function() {
-                if (initMixpanel()) {
-                    clearInterval(checkMixpanel);
-                }
-            }, 100);
-            setTimeout(function() {
-                clearInterval(checkMixpanel);
-            }, 5000);
-        }
+        })(document, window.mixpanel || []);
+    </script>
+    <script>
+        mixpanel.init('2ab77ed29d0b04d62a75f63eaecc2a94', {
+            debug: false,
+            track_pageview: false,
+            persistence: 'localStorage'
+        });
     </script>
     <script src="assets/js/mixpanel-tracker.js"></script>
     <script>
         // Initialize Mixpanel Tracker
         document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                if (typeof MixpanelTracker !== 'undefined' && typeof mixpanel !== 'undefined') {
-                    MixpanelTracker.init('2ab77ed29d0b04d62a75f63eaecc2a94', {
-                        debug: false
-                    });
-                } else {
-                    if (typeof MixpanelTracker === 'undefined') {
-                        console.error('❌ MixpanelTracker not defined. Check if assets/js/mixpanel-tracker.js is loaded correctly.');
-                    }
-                }
-            }, 200);
+            if (typeof MixpanelTracker !== 'undefined') {
+                MixpanelTracker.init('2ab77ed29d0b04d62a75f63eaecc2a94', {
+                    debug: false
+                });
+            }
         });
     </script>
     

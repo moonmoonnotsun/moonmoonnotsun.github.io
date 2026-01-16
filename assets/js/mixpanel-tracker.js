@@ -43,23 +43,17 @@
                 return;
             }
 
-            // Check if Mixpanel is loaded
+            // Check if Mixpanel is available (stub or loaded)
             if (typeof mixpanel === 'undefined') {
-                console.error('Mixpanel SDK not loaded! Make sure mixpanel-2-latest.min.js is loaded before this script.');
+                console.error('Mixpanel SDK not loaded! Make sure the official Mixpanel snippet is included before this script.');
                 return;
             }
 
             this.config.projectToken = projectToken;
             this.config = { ...this.config, ...options };
 
-            // Initialize Mixpanel (only if not already initialized)
-            if (!mixpanel.get_distinct_id || mixpanel.get_distinct_id() === null) {
-                mixpanel.init(projectToken, {
-                    debug: this.config.debug,
-                    track_pageview: false, // We'll track manually
-                    persistence: 'localStorage'
-                });
-            }
+            // Don't re-initialize - Mixpanel should already be initialized by the official snippet
+            // Just set user properties and start tracking
 
             // Set user properties
             this.setUserProperties();
